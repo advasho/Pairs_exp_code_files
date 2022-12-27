@@ -1,0 +1,36 @@
+{
+    "debugBreakpointsState": {
+        "breakpoints": [
+            {
+                "id": 1,
+                "path": "C:/Users/advas/OneDrive - mail.tau.ac.il/Desktop/EP_exp/results/general analysis files (all files are replication or UK)/concat_files/concat_multiple_csv_files_rating_exp_nutela_files.R",
+                "line_number": 56,
+                "function_steps": "",
+                "function_name": "toplevel",
+                "state": 1,
+                "editor_state": 1,
+                "editor_line_number": 56,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 1,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            },
+            {
+                "id": 3,
+                "path": "C:/Users/advas/OneDrive - mail.tau.ac.il/Desktop/EP_exp/results/general analysis files (all files are replication or UK)/concat_files/concat_multiple_csv_files_rating_exp_nutela_files.R",
+                "line_number": 39,
+                "function_steps": "",
+                "function_name": "toplevel",
+                "state": 1,
+                "editor_state": 1,
+                "editor_line_number": 39,
+                "is_pending_debug_completion": false,
+                "needs_updated_steps": false,
+                "type": 1,
+                "is_package_breakpoint": false,
+                "package_name": ""
+            }
+        ]
+    }
+}

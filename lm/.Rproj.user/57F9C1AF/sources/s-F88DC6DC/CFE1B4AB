@@ -1,0 +1,32 @@
+{
+    "id": "CFE1B4AB",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1671449221453.0,
+    "source_on_save": false,
+    "relative_order": 15,
+    "properties": {
+        "expression": "predicted_df",
+        "caption": "predicted_df",
+        "totalObservations": "190",
+        "displayedObservations": "190",
+        "variables": "3",
+        "cacheKey": "351DFA25",
+        "object": "predicted_df",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=predicted_df&cache_key=351DFA25&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2062726342128,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1671449221453,
+    "read_only": false,
+    "read_only_alternatives": []
+}

@@ -1,0 +1,32 @@
+{
+    "id": "A7615A57",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1664346012314.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "expression": "semantic_mat",
+        "caption": "semantic_mat",
+        "totalObservations": "19",
+        "displayedObservations": "19",
+        "variables": "4",
+        "cacheKey": "752B8936",
+        "object": "semantic_mat",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=semantic_mat&cache_key=752B8936&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 13229500003975253,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1664346012314,
+    "read_only": false,
+    "read_only_alternatives": []
+}

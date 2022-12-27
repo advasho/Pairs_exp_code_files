@@ -1,0 +1,50 @@
+rm(list = ls())
+library(stringr)
+library(reshape2)
+library(ggplot2)
+
+
+rm(list = ls())
+# output_filename = "CLIP_pics_pics_for_analysis.csv"
+# output_filename = "VGG_postTrained_for_analysis.csv"
+output_filename = "VGG_new_ils.csv"
+# matrix_output_filename = "CLIP_pics_pics_mat.csv"
+# matrix_output_filename = "VGG_postTrained_mat.csv"
+matrix_output_filename = "VGG_postTrained_mat_fc7.csv"
+input_file = "vgg_new_israeli_pretrained.csv"
+# input_file = "pretrained_cos_dists.csv"
+# input_file = "pretrained_cos_dists_ils.csv"
+raw_data = read.csv(input_file, row.names = 1)
+# names_dictionary = read.csv("names_dict_isl.csv")
+
+cols = c("pair","img_1", "img_2","keyPressed", "fc8")
+result = data.frame(matrix(ncol = length(cols), nrow = nrow(raw_data)))
+colnames(result) = cols
+
+row.names(raw_data) = str_replace_all(row.names(raw_data), c("'" = "", " "="", "\\)"="","\\("=""))
+row.names = row.names(raw_data)
+
+for (row in 1:length(row.names)){
+  pair = row.names[row]
+  result[row,'img_1'] = unlist(strsplit(pair,","))[1]
+  result[row, 'img_2'] = unlist(strsplit(pair,","))[2]
+}
+
+# for (row in 1:nrow(names_dictionary)) {
+#   orig_name = names_dictionary[row, "old_name"]
+#   new_name = names_dictionary[row, "img_new_name"]
+#   result["img_1"][result["img_1"] == orig_name] <- new_name
+#   result["img_2"][result["img_2"] == orig_name] <- new_name
+# }
+
+
+result$pair = paste(result$img_1, result$img_2)
+result$keyPressed = raw_data$fc7
+result$fc8 = raw_data$fc8
+
+
+result = result[order(result$img_1, result$img_2),]
+matrix1 = data.frame(acast(result, img_1~img_2, mean,value.var="keyPressed"))
+
+write.csv(result, file = output_filename, row.names = FALSE)
+write.csv(matrix1, file = matrix_output_filename)

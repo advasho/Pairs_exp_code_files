@@ -1,0 +1,32 @@
+{
+    "id": "43473A88",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1671372648049.0,
+    "source_on_save": false,
+    "relative_order": 9,
+    "properties": {
+        "expression": "sum_df",
+        "caption": "sum_df",
+        "totalObservations": 2,
+        "displayedObservations": 2,
+        "variables": 4,
+        "cacheKey": "DEEDE260",
+        "object": "sum_df",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=sum_df&cache_key=DEEDE260&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2314861393437800994,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1671372648049,
+    "read_only": false,
+    "read_only_alternatives": []
+}

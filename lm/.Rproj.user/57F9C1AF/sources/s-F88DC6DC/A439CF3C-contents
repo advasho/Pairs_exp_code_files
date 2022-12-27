@@ -1,0 +1,101 @@
+#load libraries
+library(car)
+library(Rmisc)
+library(lsr)
+library(tidyverse)
+library(rstatix)
+library(pROC)
+library(cvAUC)
+library(lsa)
+
+rm(list = ls()) # Remove everything in our workspace so we can start with a clean slate:
+options(warn=1)
+set.seed(12)
+Separator=','
+num_to_remove_from_end = 11
+
+# we load all the folders of the experiment
+# each folder is a different condition of the study
+folders = list.dirs(path = file.path("data_folders", "."), recursive = FALSE)
+
+all_results = data.frame()
+for (folder in folders){
+  condition = strsplit(as.character(folder), split = "/./")[[1]][2]
+  # in each folder we load each participant file
+  files = list.files(path = folder, pattern = "*.csv$")
+  condition_result = data.frame()
+  for (i in 1:length(files)) {
+    curr_fname = files[[i]]
+    participant = strsplit(as.character(curr_fname), split = ".csv")[[1]][1]
+    file_path = file.path(folder, curr_fname)
+    RawData<-read.csv(file_path, skip = 0)
+    RawData = head(RawData, (-1) * num_to_remove_from_end)
+    
+    RawData$xPos = as.numeric(as.character(RawData$xPos))
+    RawData$yPos = as.numeric(as.character(RawData$yPos))
+    RawData$Image.Name = as.character(RawData$Image.Name)
+    RawData$Gallery.Name = as.character(RawData$Gallery.Name)
+    
+    # we will go over every image in each gallery
+    # and comupte the distance from it to each every image on the gallery
+    pairs = data.frame()
+    for (i in 1:nrow(RawData)){
+      gallery = RawData$Gallery.Name[i]
+      img1 = RawData$Image.Name[i]
+      x1 = RawData$xPos[i]
+      y1 = RawData$yPos[i]
+      vec1 = c(x1, y1)
+      id1 = strsplit(RawData$Image.Name[i], split = "_")[[1]][1]
+      
+      # go over all other images:
+      for (j in (i+1):nrow(RawData)){ # we will start from the i+1 row so we do not repeat pairs
+        if(j > nrow(RawData)) {next}
+        gallery2 = RawData$Gallery.Name[j] 
+        
+        if (gallery == gallery2){ # we need images of the same gallery
+          img2 = RawData$Image.Name[j]
+          
+          if (img1 != img2){ # we need only images that are not the same image
+            id2 = strsplit(as.character(RawData$Image.Name[j]), split = "_")[[1]][1]
+            is_same = (id1 == id2) # we need to know whether it is the same identity or not
+            x2 = RawData$xPos[j]
+            y2 = RawData$yPos[j]
+            vec2 = c(x2, y2)
+            euclidian_sim = sqrt(sum((vec1 - vec2)^2))
+            cosine_sim = cosine(vec1, vec2)
+            curr_pair = c(gallery, img1, img2, id1, id2, is_same, euclidian_sim, cosine_sim)
+            pairs = rbind(pairs, curr_pair)
+          }
+        }
+      }
+    }
+    
+    colnames(pairs) = c("gallery","img1","img2","id1","id2","is_same","eucliduan_diff","cos_sim")
+    pairs$eucliduan_diff = as.numeric(as.character(pairs$eucliduan_diff))
+    pairs$cos_sim = as.numeric(as.character(pairs$cos_sim))
+    
+    # as euclidean distance has no upper limit, and we wand euclidean similarity
+    # we will take the maximum distance in the gallery and remove from it
+    # the distance of each pair, this will give us the relative similarity
+    # the result will be: the larger the number means more similar
+    max_diff = max(pairs$eucliduan_diff)
+    pairs$eucliduan_sim = max_diff-pairs$eucliduan_diff
+    
+    # now we compute the AUC for each participant in each gallery
+    participant_result = data.frame()
+    gallerires = unique(pairs$gallery)
+    for(gal in gallerires){
+      curr_data = pairs%>%filter(gallery==gal)
+      AUC_euc = AUC(curr_data$eucliduan_sim, curr_data$is_same)
+      AUC_cos = AUC(curr_data$cos_sim, curr_data$is_same)
+      curr_scroe = c(condition, participant, gal, AUC_euc, AUC_cos)
+      participant_result = rbind(participant_result, curr_scroe)
+    }
+    colnames(participant_result) = c("folder","participant","gallery","AUC_euc","AUC_cos")
+    condition_result = rbind(condition_result, participant_result)
+  }
+  all_results = rbind(all_results, condition_result)
+}
+
+write.csv(all_results,"all_conditions_AUC.csv", row.names = FALSE)
+

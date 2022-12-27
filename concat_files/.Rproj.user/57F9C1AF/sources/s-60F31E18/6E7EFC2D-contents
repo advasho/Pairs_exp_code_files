@@ -1,0 +1,232 @@
+rm(list = ls())
+library(stringr)
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+source('get_ss_data_from_raw_data.R')
+
+# ------------ #
+#  Parameters  #
+# ------------ #
+# exp_dir = 'israeli_replication'
+# dict = "names_dictionary.csv"
+# exp_dir = 'british_first_run'
+# dict = "null"
+# exp_dir = 'international'
+# dict = "null"
+# exp_dir = 'british_second_run'
+# dict = "names_dictionary.csv"
+exp_dir = 'international_first_run'
+dict = "null"
+
+all_resultd_file = file.path(exp_dir, paste(exp_dir, "all_condotions.csv"))
+
+if (dict != 'null'){
+  names_dictionary = read.csv(file.path(exp_dir,dict))
+}
+
+# How many lines to skip (from the beginning of the csv file).
+num_lines_to_skip = 0
+# How many lines to remove from the end of each file.
+num_to_remove_from_end = 22
+# Which line contains the subject data (age, gender, etc.)
+num_line_with_ss_data = 213
+# where the familiarity begins
+num_line_of_familiarity = 192
+# where the familiarity ends
+num_0f_familiarity_lines = 20
+# where the vividness begins
+num_line_of_vividness = 213
+# where the vividness ends
+num_0f_vividness_lines = 20
+
+all_files_results = data.frame()
+
+
+folders = list.dirs(path = file.path(exp_dir, "."), recursive = FALSE)
+
+for (folder in folders){
+  
+  if (folder == './.Rproj.user') next
+  if (str_detect(folder,'./used_already')) next
+  
+  
+  # Read the file names
+  files_folder = file.path(folder,'files')
+  files = list.files(path = files_folder, pattern = "*.csv$")
+  
+  if(str_detect(folder,'DNN')){
+    for (i in 1:length(files)) {
+      curr_fname = files[[i]]
+      file_path = file.path(files_folder, curr_fname)
+      output_filename = file.path(exp_dir,curr_fname)
+      file_contents = read.csv(file_path, skip = num_lines_to_skip)
+      result <- data.frame(matrix(ncol = 22, nrow = nrow(file_contents)))
+      colnames(result) <- c('RT','img_1','img_2','isSameProffesion','img1proffesion','img2proffesion','img1Gender','img2Gender',
+                                   'keyPressed',	'participant', 'time', "normlised_keyPress",	"age",	"gender",	"handedness",	
+                                   "isFamiliar_img1",	"isFamiliar_img2","vividness_img1","vividness_img2","reject_trial",	"condition","pair")
+      
+      result$img_1 = file_contents$img_1
+      result$img_2 = file_contents$img_2
+      result$keyPressed = file_contents$keyPressed
+      
+      result$img_1 = str_replace_all(result$img_1, c("theresa" = "tehresy"))
+      result$img_2 = str_replace_all(result$img_2, c("theresa" = "tehresy"))
+      
+      ordered_name <- ifelse(result$img_1 < result$img_2, 
+                             paste(result$img_1, result$img_2), 
+                             paste(result$img_2, result$img_1))
+      result$pair <- ordered_name
+      result$condition = gsub(".csv", "", curr_fname)
+      result$reject_trial = FALSE
+
+      write.csv(result, file = output_filename, row.names = FALSE)
+      all_files_results = rbind(all_files_results, result)
+    }
+  }else{
+  
+  output_filename = paste(folder, ".csv",sep = '')
+
+  # Prepare an empty data frame to store all of the data
+  result = data.frame()
+  
+  # Read each file and concat the results
+  for (i in 1:length(files)) {
+    curr_fname = files[[i]]
+    
+    # The main content we will work with.
+    file_path = file.path(files_folder, curr_fname)
+    file_contents = read.csv(file_path, skip = num_lines_to_skip)
+    colnames(file_contents) <- c('RT','img_1','img_2','isSameProffesion',	'img1proffesion','img2proffesion','img1Gender',	'img2Gender',	'keyPressed',	'participant', 'time')
+    file_contents <- data.frame(lapply(file_contents, function(x) {
+                      gsub("\"", "", x)
+                   }))
+    
+    # not all conditions have the vividness question, those who do have more trials
+    is_file_with_vivid = (nrow(file_contents) > 213)
+    
+    if (is_file_with_vivid){
+      num_line_with_ss_data = num_line_with_ss_data + num_0f_vividness_lines + 1
+      num_to_remove_from_end = num_to_remove_from_end + num_to_remove_from_end - 1
+    }
+    
+    #Remove lines from the end of the file
+    file_contents = head(file_contents, (-1) * num_to_remove_from_end)
+    # familiarity with images data
+    familiarity_data = read.csv(file_path, nrows=num_0f_familiarity_lines, skip=num_line_of_familiarity-1)
+    colnames(familiarity_data) <- c('file','isFamiliar','participant', 'time')
+    familiarity_data <- data.frame(lapply(familiarity_data, function(x) {
+      gsub("\"", "", x)
+    }))
+    familiarity_data$isFamiliar = as.numeric(familiarity_data$isFamiliar)
+    
+    # code I added because of some bugs that happened
+    empty_columns <- colSums(is.na(familiarity_data) | familiarity_data == "") == nrow(familiarity_data)
+    familiarity_data = familiarity_data[, !empty_columns]
+    
+    # vividness
+    if (is_file_with_vivid){
+      vividness_data = read.csv(file_path, nrows=num_0f_vividness_lines, skip=num_line_of_vividness-1)
+      colnames(vividness_data) <- c('file','vividness','participant', 'time')
+      vividness_data = vividness_data[,(names(vividness_data) %in% c('file','vividness','participant', 'time'))]
+    }
+    
+    # other things we want to add:
+    file_contents$normlised_keyPress = scale(as.numeric(file_contents$keyPressed))
+    
+    # If we should read extra subject data from a line in the file
+    if (num_line_with_ss_data > 0) {
+      # Extract other subject specific data (age, gender, etc)
+      conn = file(file_path, open = "r")
+      ss_raw_data = readLines(conn)
+      ss_raw_data = ss_raw_data[[num_line_with_ss_data]]
+      close(conn)
+      
+      file_contents$age = get_ss_data_from_raw_data(ss_raw_data, "age")
+      file_contents$gender = get_ss_data_from_raw_data(ss_raw_data, "gender")
+      file_contents$handedness = get_ss_data_from_raw_data(ss_raw_data, "handedness")
+    }
+
+    #insert the familiarity and vividness data:
+    file_contents$isFamiliar_img1 = 0
+    file_contents$isFamiliar_img2 = 0
+    
+    file_contents$vividness_img1 = 0 # will remain 0 if there was no vividness question
+    file_contents$vividness_img2 = 0
+    
+    
+    for (row in 1:nrow(familiarity_data)){
+      file_name = familiarity_data[row,'file']
+      familiarity_Score = familiarity_data[row,'isFamiliar']
+      file_contents <- file_contents %>% mutate(isFamiliar_img1 = replace(isFamiliar_img1, which(img_1 == file_name), familiarity_Score))
+      file_contents <- file_contents %>% mutate(isFamiliar_img2 = replace(isFamiliar_img2, which(img_2 == file_name), familiarity_Score))
+      if(is_file_with_vivid){
+        file_name = vividness_data[row,'file']
+        vivid_Score = vividness_data[row,'vividness']
+        file_contents <- file_contents %>% mutate(vividness_img1 = replace(vividness_img1, which(img_1 == file_name), vivid_Score))
+        file_contents <- file_contents %>% mutate(vividness_img2 = replace(vividness_img2, which(img_2 == file_name), vivid_Score))
+      }
+    }
+
+    # which trials to reject
+    if(str_detect(folder, '_U')){
+      if(sum(familiarity_data$isFamiliar) >= 0.3*num_0f_familiarity_lines){ #for unfamiliar 
+        file_contents$reject_trial = TRUE # if familiar with 30% or more IDs reject all trials
+      }else{ # if not, reject specific trials that he was familiar with one of the IDs
+        file_contents$reject_trial = (file_contents$isFamiliar_img1 == 1) | (file_contents$isFamiliar_img2 == 1)
+      }
+    }else{ # for familiar
+      if(sum(familiarity_data$isFamiliar) <= 0.7*num_0f_familiarity_lines){ # if familiar with only 70% or less IDs reject all trials
+        file_contents$reject_trial = TRUE
+      }else{# if not, reject specific trials that he was unfamiliar with one of the IDs
+        file_contents$reject_trial = (file_contents$isFamiliar_img1 == 0) | (file_contents$isFamiliar_img2 == 0)
+      }
+    }
+    
+    # then, reject also trials that the RT was not in the requested range
+    file_contents$RT = as.numeric(file_contents$RT)
+    file_contents$reject_trial = file_contents$reject_trial | (file_contents$RT < 200) | (file_contents$RT > 30000)
+
+  
+    # which trials to reject
+    if(str_detect(folder, 'gen')){ # we haven't specified for this condition any exclusions
+      file_contents$reject_trial = FALSE
+    }
+
+    # Ensure each file has the same number of columns
+    if (nrow(result) > 0 && (ncol(result) != ncol(file_contents))) {
+      msg = paste("previous files had", ncol(result), "columns, but",
+                  curr_fname, "has", ncol(file_contents), "columns",
+                  "(including the extra data - age, gender, etc.)")
+      stop(msg)
+    }
+    
+    result = rbind(result, file_contents)
+    num_line_with_ss_data = 213
+    num_to_remove_from_end = 22
+  }
+  
+  if (dict != 'null'){ #change file names according to a dictionary if there os one
+    for (row in 1:nrow(names_dictionary)) {
+      orig_name = names_dictionary[row, "img_orig_name"]
+      new_name = names_dictionary[row, "img_new_name"]
+      result["img_1"][result["img_1"] == orig_name] <- new_name
+      result["img_2"][result["img_2"] == orig_name] <- new_name
+    }
+  }
+  
+  # order all pairs in files accirding to the same order
+  ordered_name <- ifelse(result$img_1 < result$img_2, 
+                         paste(result$img_1, result$img_2), 
+                         paste(result$img_2, result$img_1))
+  result$pair <- ordered_name
+
+  write.csv(result, file = output_filename, row.names = FALSE)
+  condition_name =  gsub(exp_dir, "", folder)
+  result$condition =  gsub("/./", "", condition_name)
+  all_files_results = rbind(all_files_results, result)
+  }
+}
+
+write.csv(all_files_results, file = all_resultd_file, row.names = FALSE)
+

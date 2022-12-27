@@ -1,0 +1,213 @@
+RT,img_1,img_2,isSameProffesion,img1proffesion,img2proffesion,img1Gender,img2Gender,keyPressed,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+8609,Entertainment_ornaBanai.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6552,Entertainment_har_lev.jpg,Entertainment_rita.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3385,Entertainment_mushonov.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5889,E_katorza2-250x341.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3248,Entertainment_shani.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4111,Politics_yehimovitz.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5034,Entertainment_shani.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4240,Politics_lapid.jpg,Politics_yehimovitz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3291,Entertainment_shani.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4966,E_katorza2-250x341.jpg,Entertainment_mushonov.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6327,Entertainment_rita.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3813,Entertainment_HassonShaher.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3374,Entertainment_Ivri2.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5796,Entertainment_HassonShaher.jpg,Entertainment_rita.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3839,Politics_benet.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5010,Politics_peretz.jpg,Politics_yehimovitz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3824,E_guri2-250x310.jpg,Entertainment_mushonov.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5452,Entertainment_ornaBanai.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4073,Entertainment_HassonShaher.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+7384,Entertainment_har_lev.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+8021,Politics_benet.jpg,Politics_lapid.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3826,Politics_liberman2.jpg,Politics_yehimovitz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4373,Entertainment_Ivri2.jpg,Entertainment_ornaBanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2862,Politics_michaeliM.jpg,Politics_yehimovitz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2212,Entertainment_shani.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6471,E_guri2-250x310.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2617,Politics_benet.jpg,Politics_liberman2.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2264,Entertainment_HassonShaher.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1930,E_katorza2-250x341.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+40842,Politics_lapid.jpg,Politics_peretz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+9012,Entertainment_HassonShaher.jpg,Entertainment_mushonov.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3098,E_katorza2-250x341.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+7744,Politics_lapid.jpg,Politics_smootch.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+7290,E_guri2-250x310.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5178,Entertainment_yanai.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2886,E_katorza2-250x341.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4414,E_guri2-250x310.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3067,E_guri2-250x310.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2164,Politics_shaked.jpg,Politics_smootch.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5180,Entertainment_Ivri2.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+7073,Entertainment_shimi.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2528,Politics_lapid.jpg,Politics_liberman2.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2826,Politics_michaeliM.jpg,Politics_peretz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1948,E_katorza2-250x341.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4115,Entertainment_HassonShaher.jpg,Entertainment_ornaBanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2715,Politics_liberman2.jpg,Politics_michaeliM.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2181,Entertainment_HassonShaher.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2650,Entertainment_rita.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3776,Entertainment_ornaBanai.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3312,E_katorza2-250x341.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2762,Entertainment_mushonov.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5573,Entertainment_shimi.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2920,Entertainment_shani.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3510,Entertainment_mushonov.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2726,E_katorza2-250x341.jpg,Entertainment_ornaBanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3121,Entertainment_Ivri2.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3165,Entertainment_mushonov.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2952,Politics_smootch.jpg,Politics_yehimovitz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2361,Entertainment_rita.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2285,Entertainment_shimi.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5975,Entertainment_ornaBanai.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,5,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3005,Entertainment_har_lev.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2943,Entertainment_ornaBanai.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2222,E_katorza2-250x341.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2396,E_katorza2-250x341.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2055,Entertainment_ornaBanai.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5174,Entertainment_ornaBanai.jpg,Entertainment_rita.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2192,Entertainment_yanai.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2304,E_katorza2-250x341.jpg,Entertainment_har_lev.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+27984,Entertainment_har_lev.jpg,Entertainment_mushonov.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6921,Politics_michaeliM.jpg,Politics_shaked.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6037,Entertainment_yanai.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6724,Entertainment_Ivri2.jpg,Entertainment_rita.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5250,Entertainment_har_lev.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,1,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4913,E_guri2-250x310.jpg,Entertainment_ornaBanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3345,Entertainment_shimi.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3259,Politics_lapid.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4693,Entertainment_rita.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3504,Entertainment_mushonov.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6905,Politics_michaeliM.jpg,Politics_smootch.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2376,Entertainment_har_lev.jpg,Entertainment_HassonShaher.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2385,Entertainment_shani.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2807,Entertainment_ornaBanai.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3399,Entertainment_HassonShaher.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3502,Entertainment_Ivri2.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3258,Entertainment_shani.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2015,Entertainment_shani.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4685,Entertainment_yanai.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4653,Entertainment_mushonov.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2258,Politics_lapid.jpg,Politics_shaked.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4203,Entertainment_HassonShaher.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2333,Politics_benet.jpg,Politics_michaeliM.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1960,Entertainment_yanai.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2498,Politics_michaeliM.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2463,Entertainment_shimi.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3493,Entertainment_mushonov.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3524,Entertainment_yanai.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2777,Politics_lapid.jpg,Politics_michaeliM.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6542,Entertainment_har_lev.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5121,Entertainment_rita.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5714,E_guri2-250x310.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6617,Politics_peretz.jpg,Politics_smootch.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6189,E_guri2-250x310.jpg,E_katorza2-250x341.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+78221,Entertainment_Ivri2.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2685,E_katorza2-250x341.jpg,Entertainment_HassonShaher.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2715,Entertainment_HassonShaher.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3647,Entertainment_har_lev.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3544,Entertainment_ornaBanai.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6955,E_katorza2-250x341.jpg,Entertainment_Ivri2.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2448,Entertainment_rita.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6026,Entertainment_har_lev.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3033,Entertainment_shimi.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5508,E_guri2-250x310.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2878,E_katorza2-250x341.jpg,Entertainment_rita.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4074,Entertainment_rita.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3002,Entertainment_Ivri2.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2474,Entertainment_ornaBanai.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+7340,Entertainment_har_lev.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2745,Entertainment_rita.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2043,Entertainment_HassonShaher.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4671,Entertainment_yanai.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3268,Entertainment_mushonov.jpg,Entertainment_rita.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2275,Entertainment_Ivri2.jpg,Entertainment_mushonov.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3530,Entertainment_mushonov.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2322,Entertainment_mushonov.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3740,Entertainment_shimi.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4446,Entertainment_har_lev.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5580,Politics_shaked.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2551,Entertainment_shimi.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1859,Politics_liberman2.jpg,Politics_peretz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3149,Entertainment_har_lev.jpg,Entertainment_ornaBanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2007,Entertainment_HassonShaher.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1873,Entertainment_Ivri2.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+536038,Entertainment_rita.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3244,Entertainment_rita.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,1,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3914,Entertainment_HassonShaher.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4084,Politics_benet.jpg,Politics_shaked.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2785,E_katorza2-250x341.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2896,Entertainment_mushonov.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2472,Entertainment_shimi.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3583,Politics_benet.jpg,Politics_smootch.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2235,Politics_liberman2.jpg,Politics_smootch.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3605,E_guri2-250x310.jpg,Entertainment_HassonShaher.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3688,Politics_benet.jpg,Politics_peretz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4841,Entertainment_Ivri2.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5306,Entertainment_har_lev.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,1,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3765,Entertainment_Ivri2.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4209,Entertainment_Ivri2.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4121,E_guri2-250x310.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6853,Politics_liberman2.jpg,Politics_shaked.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2914,Entertainment_Ivri2.jpg,Entertainment_shimi.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2126,Politics_shaked.jpg,Politics_yehimovitz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4964,Entertainment_shani.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2429,Entertainment_HassonShaher.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1797,E_katorza2-250x341.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2133,Entertainment_har_lev.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4118,Entertainment_yanai.jpg,Politics_lapid.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2659,Entertainment_har_lev.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2896,Entertainment_shimi.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2537,E_guri2-250x310.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+6530,Entertainment_Ivri2.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2743,E_guri2-250x310.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2238,Entertainment_mushonov.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2441,E_guri2-250x310.jpg,Entertainment_rita.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2121,Entertainment_ornaBanai.jpg,Politics_shaked.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4039,E_guri2-250x310.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2564,Entertainment_rita.jpg,Politics_zamir.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2062,E_guri2-250x310.jpg,Entertainment_har_lev.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4331,E_katorza2-250x341.jpg,Entertainment_shani.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4992,E_guri2-250x310.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5328,Politics_liberman2.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,3,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+62991,Entertainment_HassonShaher.jpg,Politics_peretz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2724,Entertainment_shani.jpg,Politics_michaeliM.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+171450,Politics_peretz.jpg,Politics_shaked.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2033,Entertainment_har_lev.jpg,Entertainment_Ivri2.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3283,Entertainment_mushonov.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2955,Entertainment_ornaBanai.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+2326,Entertainment_mushonov.jpg,Entertainment_ornaBanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1845,E_guri2-250x310.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1808,E_katorza2-250x341.jpg,Politics_liberman2.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+1413,Politics_benet.jpg,Politics_yehimovitz.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3692,Entertainment_yanai.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4595,Entertainment_shani.jpg,Politics_benet.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3791,E_guri2-250x310.jpg,Entertainment_Ivri2.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,2,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4133,Entertainment_ornaBanai.jpg,Entertainment_yanai.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,F,F,4,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4491,Politics_smootch.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,1,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+3068,Politics_peretz.jpg,Politics_zamir.jpg,TRUE,pictures/stimuli/P,pictures/stimuli/P,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+4294,Entertainment_rita.jpg,Politics_smootch.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5501,Entertainment_HassonShaher.jpg,Entertainment_Ivri2.jpg,TRUE,pictures/stimuli/E,pictures/stimuli/E,M,M,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+5547,Entertainment_har_lev.jpg,Politics_yehimovitz.jpg,FALSE,pictures/stimuli/E,pictures/stimuli/P,F,F,6,5fde6d194b3bdc5b9e1ce1d1,44733.39653
+file,isFamiliar,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_har_lev.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_yehimovitz.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_shaked.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_shimi.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_benet.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_mushonov.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_ornaBanai.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_shani.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_yanai.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_michaeliM.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+E_guri2-250x310.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_zamir.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_HassonShaher.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_peretz.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_Ivri2.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Entertainment_rita.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+E_katorza2-250x341.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_smootch.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_lapid.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+Politics_liberman2.jpg,1,5fde6d194b3bdc5b9e1ce1d1,"06/24/2022, 10:12:13",,,,,,,
+age: 29,gender: F,handedness: right,5e722a25f65f1b1586a811db,"06/24/2022, 10:12:13",,,,,,

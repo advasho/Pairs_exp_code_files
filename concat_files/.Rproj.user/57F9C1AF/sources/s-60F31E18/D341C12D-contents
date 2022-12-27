@@ -1,0 +1,169 @@
+rm(list = ls())
+library(stringr)
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+source('get_ss_data_from_raw_data.R')
+
+# ------------ #
+#  Parameters  #
+# ------------ #
+
+# names_dictionary = read.csv("names_dict_with_sub_ocuupation.csv")
+
+# How many files to skip (from the beginning of the csv file).
+num_lines_to_skip = 0
+# How many lines to remove from the end of each file.
+num_to_remove_from_end = 22
+# Which line contains the subject data (age, gender, etc.)
+num_line_with_ss_data = 212
+# total number of lines in single subject data
+num_of_data_rows = 212
+# where the familiarity begins
+num_line_of_familiarity = 192
+# where the familiarity ends
+num_0f_familiarity_lines = 20
+
+
+folders = list.dirs(path = ".", recursive = FALSE)
+
+for (folder in folders){
+  
+  if (folder == './.Rproj.user' ||  folder == "./used_already") next
+  
+  output_filename = file.path(folder, paste(folder, ".csv", sep = ''))
+  matrix_output_filename =  file.path(folder, paste(folder, "_matix.csv", sep = ''))
+  normlized_matrix_output_filename = file.path(folder, paste(folder, "_matix_normal.csv", sep = ''))
+  familiarity_output_filename = file.path(folder, paste(folder, "_familiarty_all_subjects.csv", sep = ''))
+  
+  
+  # Read the file names
+  files_folder = file.path(folder,'files')
+
+  files = list.files(path = files_folder, pattern = "*.txt$")
+  
+  # The main content we will work with. there is one file
+  file_path = file.path(files_folder, files[[1]])
+  all_subjects_data = read.csv(file_path)
+  # to calculate the number of participants:
+  num_of_lines = nrow(all_subjects_data)
+  num_of_participants = (num_of_lines+1)/(num_of_data_rows+1)
+  
+  # Prepare an empty data frame to store all of the data
+  result = data.frame()
+  is_familiar_result = data.frame()
+  
+  # Read each file and concat the results
+  for (i in 1:num_of_participants) {
+    
+    # the data of the current subject:
+    file_contents_general = head(all_subjects_data, n = num_of_data_rows)
+    # remove the subject from the general data:
+    if (i < num_of_participants){
+      all_subjects_data = tail(all_subjects_data, -(num_of_data_rows+1))
+    }
+    
+    # start modify the data of this subject:
+    file_contents_general <- data.frame(lapply(file_contents_general, function(x) {
+                        gsub('"', "", x)}))
+    colnames(file_contents_general) <- c('RT','img_1','img_2','isSameProffesion',	'img1proffesion','img2proffesion','img1Gender',	'img2Gender',	'keyPressed')
+    #Remove lines from the end of the file
+    file_contents = head(file_contents_general, (-1) * num_to_remove_from_end)
+    # familiarity with images data
+    familiarity_data = file_contents_general[num_line_of_familiarity:(num_line_of_familiarity+num_0f_familiarity_lines-1),]
+    colnames(familiarity_data) <- c('file','isFamiliar')
+    familiarity_data = familiarity_data[,(names(familiarity_data) %in% c('file','isFamiliar'))]
+    
+    # other things we want to add:
+    file_contents$pair = paste(file_contents$img_1, file_contents$img_2)
+    file_contents$keyPressed = as.numeric(as.character(file_contents$keyPressed))
+    file_contents$normlised_keyPress = scale(file_contents$keyPressed)
+    
+    
+    # If we should read extra subject data from a line in the file
+    if (num_line_with_ss_data > 0) {
+      # Extract other subject specific data (age, gender, etc)
+      conn = file_contents_general[num_line_with_ss_data,]
+      ss_raw_data = toString(conn[1,])
+      
+      file_contents$age = get_ss_data_from_raw_data(ss_raw_data, "age")
+      file_contents$gender = get_ss_data_from_raw_data(ss_raw_data, "gender")
+      file_contents$handedness = get_ss_data_from_raw_data(ss_raw_data, "handedness")
+      file_contents$participant = get_ss_data_from_raw_data(ss_raw_data, "subjectID")
+      familiarity_data$age = get_ss_data_from_raw_data(ss_raw_data, "age")
+      familiarity_data$gender = get_ss_data_from_raw_data(ss_raw_data, "gender")
+      familiarity_data$handedness = get_ss_data_from_raw_data(ss_raw_data, "handedness")
+      familiarity_data$participant = get_ss_data_from_raw_data(ss_raw_data, "subjectID")
+    }
+
+     # delete rows that include images that the participant was not familiar with
+     # and that the unfamiliar group was familiatr with them:
+     if(str_detect(folder, 'unfamiliar')){
+      for (row in 1:nrow(familiarity_data)){
+         if (familiarity_data[row,'isFamiliar'] == 1){
+           file_name = familiarity_data[row,'file']
+           file_contents = file_contents[!(file_contents$img_1==file_name | file_contents$img_2==file_name),]
+         }
+       }
+     }
+     else{
+       for (row in 1:nrow(familiarity_data)){
+         if (familiarity_data[row,'isFamiliar'] == 0){
+          file_name = familiarity_data[row,'file']
+           file_contents = file_contents[!(file_contents$img_1==file_name | file_contents$img_2==file_name),]
+         }
+       }
+     }
+     
+    # Ensure each file has the same number of columns
+    if (nrow(result) > 0 && (ncol(result) != ncol(file_contents))) {
+      msg = paste("previous files had", ncol(result), "columns, but",
+                  curr_fname, "has", ncol(file_contents), "columns",
+                  "(including the extra data - age, gender, etc.)")
+      stop(msg)
+    }
+    
+    result = rbind(result, file_contents)
+    is_familiar_result = rbind(is_familiar_result, familiarity_data)
+  }
+  
+  # for (row in 1:nrow(names_dictionary)) {
+  #   orig_name = names_dictionary[row, "img_orig_name"]
+  #   new_name = names_dictionary[row, "img_new_name"]
+  #   result["img_1"][result["img_1"] == orig_name] <- new_name
+  #   result["img_2"][result["img_2"] == orig_name] <- new_name
+  # }
+  
+  sum_data = aggregate(keyPressed ~  img_1*img_2, result, mean)
+  sum_data <- sum_data[order(sum_data$img_1),]
+  
+  sum_data_copy = sum_data
+  img3= sum_data$img_1
+  sum_data_copy$img_1 = sum_data$img_2
+  sum_data_copy$img_2 = img3
+  sum_data_final1 = rbind(sum_data, sum_data_copy)
+  
+  
+  sum_data2 = aggregate(normlised_keyPress ~  img_1*img_2, result, mean)
+  sum_data_copy = sum_data2
+  img3= sum_data2$img_1
+  sum_data_copy$img_1 = sum_data2$img_2
+  sum_data_copy$img_2 = img3
+  sum_data_final2 = rbind(sum_data2, sum_data_copy)
+  
+  
+  matrix1 = data.frame(acast(sum_data_final1, img_1~img_2, value.var="keyPressed"))
+  matrix2 = data.frame(acast(sum_data_final2, img_1~img_2, value.var="V1"))
+  
+  
+  write.csv(result, file = output_filename, row.names = FALSE)
+  write.csv(is_familiar_result, file = familiarity_output_filename, row.names = FALSE)
+  write.csv(matrix1, file = matrix_output_filename)
+  write.csv(matrix2, file = normlized_matrix_output_filename)
+  
+}
+
+# 
+# ggplot(data = sum_data_final2, aes(x=img_1, y=img_2, fill=V1))+geom_tile()
+# ggplot(data = sum_data_final1, aes(x=img_1, y=img_2, fill=keyPressed))+geom_tile()
+# 

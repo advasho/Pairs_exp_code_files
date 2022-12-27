@@ -1,0 +1,32 @@
+{
+    "id": "1A093641",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1664346979454.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "expression": "visSem_mat",
+        "caption": "visSem_mat",
+        "totalObservations": "190",
+        "displayedObservations": "190",
+        "variables": "4",
+        "cacheKey": "AD3B5093",
+        "object": "visSem_mat",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=visSem_mat&cache_key=AD3B5093&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 13229500003975253,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1664346979454,
+    "read_only": false,
+    "read_only_alternatives": []
+}

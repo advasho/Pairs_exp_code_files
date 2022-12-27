@@ -1,0 +1,32 @@
+{
+    "id": "93641400",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1671363509413.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "expression": "vividness_data",
+        "caption": "vividness_data",
+        "totalObservations": "20",
+        "displayedObservations": "20",
+        "variables": "4",
+        "cacheKey": "E2739D4D",
+        "object": "vividness_data",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=vividness_data&cache_key=E2739D4D&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 25895998509350961,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1671363509413,
+    "read_only": false,
+    "read_only_alternatives": []
+}

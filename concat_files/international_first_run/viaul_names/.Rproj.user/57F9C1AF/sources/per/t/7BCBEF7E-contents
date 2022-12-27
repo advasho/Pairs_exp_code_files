@@ -1,0 +1,140 @@
+library(stringr)
+library(reshape2)
+library(ggplot2)
+library(dplyr)
+
+# ------------ #
+#  Parameters  #
+# ------------ #
+# output_filename = "visual_pics_unified_file.csv"
+
+
+#print(getwd()); for debugs
+
+rm(list = ls())
+# Read the file names
+files = list.files(path = ".", pattern = "*.csv$")
+# Prepare an empty data frame to store all of the data
+result = data.frame()
+is_familiar_result = data.frame()
+
+df_dict <- list()
+# Read each file and concat the results
+for (i in 1:length(files)) {
+    curr_fname = files[[i]]
+    curr_df <- read.csv(curr_fname)
+    ordered_name <- ifelse(curr_df$img_1 < curr_df$img_2, 
+                           paste(curr_df$img_1, curr_df$img_2), 
+                           paste(curr_df$img_2, curr_df$img_1))
+    curr_df$pair <- ordered_name
+    df_dict[[curr_fname]] <- curr_df
+}
+
+correlations <- matrix(ncol = length(files), nrow = length(files))
+correlations_norm <- correlations
+for (i in 1:length(files)) {
+  main_df <- df_dict[[i]]
+  main_df <- main_df %>% group_by(pair) %>% summarise(keyPressed = mean(keyPressed), normlised_keyPress = mean(normlised_keyPress))
+  for (j in 1:length(files)) {
+    sub_df <- df_dict[[j]]
+    sub_df <- sub_df %>% group_by(pair) %>% summarise(keyPressed = mean(keyPressed), normlised_keyPress = mean(normlised_keyPress))
+    sub_df <- subset(sub_df, pair %in% main_df$pair)
+    main_unique_df <- subset(main_df, pair %in% sub_df$pair)
+    
+    if (all(sub_df$pair == main_unique_df$pair))
+    {
+      plot_data = main_unique_df
+      plot_data$sub_keyPressed = sub_df$keyPressed
+      # plot(main_unique_df$normlised_keyPress, sub_df$normlised_keyPress,
+      #      xlab = names(df_dict)[i], ylab = names(df_dict)[j])
+      # abline(lm(main_unique_df$normlised_keyPress ~ sub_df$normlised_keyPress), col = "blue")
+      # plot(main_unique_df$keyPressed, sub_df$keyPressed,
+      #      xlab = names(df_dict)[i], ylab = names(df_dict)[j])
+      # abline(lm(main_unique_df$keyPressed ~ sub_df$keyPressed), col = "green")
+      # 
+      g = ggplot(plot_data, aes(x=keyPressed, y=sub_keyPressed)) +
+        geom_point() +
+        geom_smooth(method=lm , color="red", fill="#69b3a2", se=TRUE) +
+        theme_classic()+
+        ggtitle(paste(names(df_dict)[i],"_" ,names(df_dict)[j]))
+      print(g)
+    }
+    
+    
+    curr_cor <- cor(main_unique_df$keyPressed, sub_df$keyPressed)
+    curr_cor_norm <- cor(main_unique_df$normlised_keyPress, sub_df$normlised_keyPress)
+    
+    correlations[i,j] <- curr_cor
+    correlations_norm[i,j] <- curr_cor_norm
+  }
+}
+
+correlations <- as.data.frame(correlations, row.names = names(df_dict))
+correlations_norm <- as.data.frame(correlations_norm, row.names = names(df_dict))
+colnames(correlations) <- rownames(correlations)
+colnames(correlations_norm) <- rownames(correlations_norm)
+# Get upper triangle of the correlation matrix
+get_upper_tri <- function(cormat){
+  cormat[lower.tri(cormat)]<- NA
+  return(cormat)
+}
+upper_tri_corr <- get_upper_tri(correlations)
+upper_tri_corr_norm <- get_upper_tri(correlations_norm)
+
+melted_corr <- reshape2:::melt.matrix(upper_tri_corr, na.rm = TRUE)
+melted_corr_norm <- reshape2:::melt.matrix(upper_tri_corr_norm, na.rm = TRUE)
+
+
+
+ggplot(data = melted_corr_norm, aes(Var2, Var1, fill = value))+
+  geom_tile(color = "white")+
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+                       midpoint = .5, limit = c(-.1,1), space = "Lab", 
+                       name="Pearson\nCorrelation") +
+  theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+                                   size = 12, hjust = 1))+
+  coord_fixed() +
+  geom_text(aes(Var2, Var1, label = round(value,2)), color = "black", size = 4) +
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank(),
+    axis.ticks = element_blank(),
+    legend.justification = c(1, 0),
+    legend.position = c(0.6, 0.7),
+    legend.direction = "horizontal")+
+  guides(fill = guide_colorbar(barwidth = 7, barheight = 1,
+                               title.position = "top", title.hjust = 0.5))
+
+
+ggplot(data = melted_corr, aes(Var2, Var1, fill = value))+
+  geom_tile(color = "white")+
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+                       midpoint = .5, limit = c(-.1,1), space = "Lab", 
+                       name="Pearson\nCorrelation") +
+  theme_minimal()+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, 
+                                   size = 12, hjust = 1))+
+  coord_fixed() +
+  geom_text(aes(Var2, Var1, label = round(value,2)), color = "black", size = 4) +
+  theme(
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank(),
+    axis.ticks = element_blank(),
+    legend.justification = c(1, 0),
+    legend.position = c(0.6, 0.7),
+    legend.direction = "horizontal")+
+  guides(fill = guide_colorbar(barwidth = 7, barheight = 1,
+                               title.position = "top", title.hjust = 0.5))
+
+
+# write.csv(result, file = output_filename, row.names = FALSE)
+# write.csv(is_familiar_result, file = familiarity_output_filename, row.names = FALSE)
+# write.csv(matrix1, file = matrix_output_filename)
+# write.csv(matrix2, file = normlized_matrix_output_filename)

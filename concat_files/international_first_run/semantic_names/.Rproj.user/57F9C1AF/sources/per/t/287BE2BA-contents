@@ -1,0 +1,144 @@
+# ---------------------
+# How to use this file?
+# ---------------------
+# 1. Copy this file and 'get_ss_data_from_raw_data.R' to the folder were
+#    the csv files are located.
+# 2. Open one csv file (using excel for example) and ensure the parameters
+#    listed in this file match the format of the csv file you will be
+#    proccessing (how many lines to skip/remove, etc.).
+# 3. We assume that a header line exists in each file.
+# 4. This code assumes that the subject id is at the end of each filename.
+# 5. This code was written to handle result files downloaded from our
+#    experiments server. it will prbobaly not handle other files correctly.
+
+
+rm(list = ls())
+library(stringr)
+library(reshape2)
+library(ggplot2)
+source('get_ss_data_from_raw_data.R')
+
+# ------------ #
+#  Parameters  #
+# ------------ #
+output_filename = "semantic_names_unified_file.csv"
+matrix_output_filename = "semantic_names_matrix_international.csv"
+normlized_matrix_output_filename = "semantic_names_matrix_normal.csv"
+familiarity_output_filename = "familiarty_all_subjects.csv"
+# How many files to skip (from the beginning of the csv file).
+num_lines_to_skip = 0
+# How many lines to remove from the end of each file.
+num_to_remove_from_end = 28
+# Which line contains the subject data (age, gender, etc.)
+num_line_with_ss_data = 354
+# where the familiarity begins
+num_line_of_familiarity = 327
+# where the familiarity ends
+num_0f_familiarity_lines = 26
+
+#print(getwd()); for debugs
+
+# Read the file names
+files = list.files(path = ".", pattern = "*.csv$")
+# Prepare an empty data frame to store all of the data
+result = data.frame()
+is_familiar_result = data.frame()
+# 
+# names_dictionary = read.csv("names_dict_with_sub_ocuupation.csv")
+
+# Read each file and concat the results
+for (i in 1:length(files)) {
+    curr_fname = files[[i]]
+    
+    if (curr_fname == 'names_dict_with_sub_ocuupation.csv'){
+      next
+    }
+
+    # The main content we will work with. 
+    file_contents = read.csv(curr_fname, skip = num_lines_to_skip)
+    colnames(file_contents) <- c('RT','img_1','img_2','isSameProffesion',	'img1proffesion','img2proffesion','img1Gender',	'img2Gender',	'keyPressed',	'participant', 'time')
+    #Remove lines from the end of the file
+    file_contents = head(file_contents, (-1) * num_to_remove_from_end)
+    # familiarity with images data
+    familiarity_data = read.csv(curr_fname, nrows=num_0f_familiarity_lines, skip=num_line_of_familiarity-1)
+    colnames(familiarity_data) <- c('file','isFamiliar','participant', 'time')
+    
+    # other things we want to add:
+    file_contents$pair = paste(file_contents$img_1, file_contents$img_2)
+    file_contents$normlised_keyPress = scale(file_contents$keyPressed)
+
+    # Extract the subject id from the file name -  relevant only to files from egozi not nutela
+    # temp = unlist(str_split(curr_fname, "[.]"))[[1]]
+    # temp = unlist(str_split(temp, "_"))
+    # file_contents$subject.id = temp[[length(temp)]]
+
+    # If we should read extra subject data from a line in the file
+    if (num_line_with_ss_data > 0) {
+        # Extract other subject specific data (age, gender, etc)
+        conn = file(curr_fname, open = "r")
+        ss_raw_data = readLines(conn)
+        ss_raw_data = ss_raw_data[[num_line_with_ss_data]]
+        close(conn)
+        
+        file_contents$age = get_ss_data_from_raw_data(ss_raw_data, "age")
+        file_contents$gender = get_ss_data_from_raw_data(ss_raw_data, "gender")
+        file_contents$handedness = get_ss_data_from_raw_data(ss_raw_data, "handedness")
+    }
+
+    # delete rows that include images that the participant was not familiar with:
+    for (row in 1:nrow(familiarity_data)){
+      if (familiarity_data[row,'isFamiliar'] == 0){
+        file_name = familiarity_data[row,'file']
+        file_contents = file_contents[!(file_contents$img_1==file_name | file_contents$img_2==file_name),]
+      }
+    }
+
+    
+    # Ensure each file has the same number of columns
+    if (nrow(result) > 0 && (ncol(result) != ncol(file_contents))) {
+      msg = paste("previous files had", ncol(result), "columns, but",
+                  curr_fname, "has", ncol(file_contents), "columns",
+                  "(including the extra data - age, gender, etc.)")
+      stop(msg)
+    }
+
+    result = rbind(result, file_contents)
+    is_familiar_result = rbind(is_familiar_result, familiarity_data)
+}
+
+# for (row in 1:nrow(names_dictionary)) {
+#   orig_name = names_dictionary[row, "img_orig_name"]
+#   new_name = names_dictionary[row, "img_new_name"]
+#   result["img_1"][result["img_1"] == orig_name] <- new_name
+#   result["img_2"][result["img_2"] == orig_name] <- new_name
+# }
+
+sum_data = aggregate(keyPressed ~  img_1*img_2, result, mean)
+sum_data <- sum_data[order(sum_data$img_1),]
+
+sum_data_copy = sum_data
+img3= sum_data$img_1
+sum_data_copy$img_1 = sum_data$img_2
+sum_data_copy$img_2 = img3
+sum_data_final1 = rbind(sum_data, sum_data_copy)
+
+ggplot(data = sum_data_final1, aes(x=img_1, y=img_2, fill=keyPressed))+geom_tile()
+
+
+sum_data2 = aggregate(normlised_keyPress ~  img_1*img_2, result, mean)
+sum_data_copy = sum_data2
+img3= sum_data2$img_1
+sum_data_copy$img_1 = sum_data2$img_2
+sum_data_copy$img_2 = img3
+sum_data_final2 = rbind(sum_data2, sum_data_copy)
+
+ggplot(data = sum_data_final2, aes(x=img_1, y=img_2, fill=V1))+geom_tile()
+
+matrix1 = data.frame(acast(sum_data_final1, img_1~img_2, value.var="keyPressed"))
+matrix2 = data.frame(acast(sum_data_final2, img_1~img_2, value.var="V1"))
+
+
+write.csv(result, file = output_filename, row.names = FALSE)
+write.csv(is_familiar_result, file = familiarity_output_filename, row.names = FALSE)
+write.csv(matrix1, file = matrix_output_filename)
+write.csv(matrix2, file = normlized_matrix_output_filename)
